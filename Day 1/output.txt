@@ -1,0 +1,11 @@
+# Làm sao để thấy JS chạy?
+- Cách 1: In ra console bằng console.log()
+    console.log("Hello Quang!");
+    Mở Chrome → chuột phải → Inspect → tab Console để xem.
+
+- Cách 2: Hiện hộp thoại popup bằng alert()
+    alert("Đây là thông báo!");
+
+- Cách 3: Ghi trực tiếp ra HTML 
+    document.write("Chào mừng bạn!");
+Không nên dùng trong dự án thật – vì nó ghi đè luôn toàn bộ trang web.
