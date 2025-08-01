@@ -1,0 +1,5 @@
+Mục tiêu của buổi học:
+- Biết Javascript là gì và tại sao nó cần thiết cho frontend
+- Viết được dòng JS đầu tiên
+- Hiểu khái niệm biến (let, const, var), kiểu dữ liệu, toán tử
+- Biết cách nhúng JS vào HTML và in ra màn hình

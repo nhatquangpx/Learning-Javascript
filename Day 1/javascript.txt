@@ -1,0 +1,61 @@
+# Javascript là gì?
+- JS là ngôn ngữ lập trình dùng để làm cho trang web động và tương tác
+- Nếu HTML là khung xương, CSS là ngoại hình, thì JS là bộ não: xử lí logic, tương tác người dùng, gọi API, điều khiển dữ liệu
+
+# Cách viết JS:
+- Cách 1: Inline (trong thẻ HTML)
+    + Dùng để viết hành động nhỏ trực tiếp trong HTML
+    + Nhanh, đơn giản, những không nên dùng cho dự án thực tiếp
+    + Ví dụ:
+
+    <button onclick="alert('Chào bạn Quang!')">Bấm vào đây</button>
+    // Khi click vào nút, sẽ hiện popup
+
+- Cách 2: Internal (viết trong thẻ <script>)
+    + Ví dụ: file .html
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>JS nội bộ</title>
+    </head>
+    <body>
+        <h1>Xin chào!</h1>
+
+        <script>
+            console.log("Tôi đang học JS nội bộ");
+            alert("Hello, Quang!");
+        </script>
+    </body>
+    </html>
+
+    + Thường đặt thẻ <script> ở cuối body để JS chạy sau khi HTML đã được tải
+
+- Cách 3: External (viết trong file .js riêng)
+    + Cách chuyên nghiệp và chuẩn nhất
+    + Cấu trúc file: project/
+                     ├── index.html
+                     ├── style.css
+                     └── script.js
+    + Ví dụ: 
+    File index.html:
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Trang của Quang</title>
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <h1>Xin chào!</h1>
+    </body>
+    </html>
+
+    File script.js:
+
+    console.log("Đây là file script.js");
+    alert("Đã kết nối file JavaScript!");
+
+    // src="script.js": đường dẫn tới file JS
+    // defer: trì hoãn việc chạy JS cho tới khi HTML tải xong → khuyên dùng
+
