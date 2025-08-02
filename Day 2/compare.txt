@@ -1,0 +1,12 @@
+# Toán tử so sánh:
+        | Toán tử    | Ý nghĩa                              | Ví dụ         | Kết quả |
+        | ---------- | ------------------------------------ | ------------- | ------- |
+        | `==`       | So sánh giá trị                      | `5 == "5"`    | `true`  |
+        | `===`      | So sánh giá trị & kiểu               | `5 === "5"`   | `false` |
+        | `!=`       | Không bằng                           | `5 != 3`      | `true`  |
+        | `!==`      | Không bằng giá trị hoặc kiểu         | `5 !== "5"`   | `true`  |
+        | `>`        | Lớn hơn                              | `10 > 5`      | `true`  |
+        | `<`        | Nhỏ hơn                              | `3 < 5`       | `true`  |
+        | `>=`, `<=` | Lớn hơn hoặc bằng, nhỏ hơn hoặc bằng | `score >= 70` | `true`  |
+- Chú ý: Luôn ưu tiên dùng === thay vì == để tránh lỗi ngầm do khác kiểu dữ liệu
+

@@ -1,0 +1,5 @@
+Mục tiêu của buổi học:
+- Hiểu cách viết điều kiện bằng if, else, else if
+- Biết dùng toán tử so sánh và logic
+- Viết được chương trình có điều kiện (tính tuổi, kiểm tra chẵn lẻ, đánh giá điểm)
+- Làm quen với prompt() để nhận dữ liệu người dùng nhập

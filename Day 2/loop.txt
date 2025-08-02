@@ -1,0 +1,26 @@
+# Vòng lặp:
+- Cho phép thực hiện lặp đi lặp lại một đoạn mã cho đến khi thỏa mãn điều kiện nào đó
+
+# Lặp với số lần biết trước:
+- Cú pháp: 
+    for (let i = 0; i < 5; i++) {
+        console.log ("Lần thứ " + i)
+    }
+
+# Lặp với số lần không biết trước (Lặp khi điều kiện còn đúng):
+- Cú pháp: 
+    let i = 1
+    while (i < 5) {
+        console.log("Lần thứ " + i)
+        i++
+    }
+
+# do...while -> Luôn chạy ít nhất 1 lần đầu tiên
+- Cú pháp:
+    let i = 1
+    do {
+        console.log("Lần thứ " + i)
+        i++
+    } while (i<1)
+- Dù điều kiện sai, vòng vẫn chạy 1 lần đầu tiên
+

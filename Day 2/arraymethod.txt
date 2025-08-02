@@ -1,0 +1,81 @@
+# Bản chất của các phương thức mảng:
+- JS cung cấp các phương thức đi kèm với mảng:
+        | Mục tiêu                                        | Phương thức |
+        | ----------------------------------------------- | ----------- |
+        | Duyệt từng phần tử                              | `forEach()` |
+        | Biến đổi từng phần tử → mảng mới                | `map()`     |
+        | Lọc ra phần tử theo điều kiện                   | `filter()`  |
+        | Tìm phần tử đầu tiên phù hợp                    | `find()`    |
+        | Kiểm tra có phần tử nào thỏa điều kiện          | `some()`    |
+        | Kiểm tra tất cả phần tử có thỏa điều kiện không | `every()`   |
+        | Tính tổng, nhân, xử lý chuỗi thành 1 kết quả    | `reduce()`  |
+
+# forEach() - Duyệt qua từng phần tử
+- Ví dụ:
+    let arr = [10, 20, 30]
+
+    arr.forEach(function(item, index, array) {
+        console.log("Giá trị: ", item, " - Vị trí: ", index)
+    })
+- Chú ý: forEach() không trả về mảng mới - chỉ dùng để lặp, xử lý phụ
+
+# map() - Tạo mảng mới từ mảng gốc
+- Ví dụ: 
+    let numbers = [1, 2, 3]
+    let squared = numbers.map(function(num) {
+        return num * num
+    })
+    console.log(squared) // [1, 4, 9]
+
+- map() luôn trả về mảng mới cùng số phần tử với mảng ban đầu
+
+# filter() - Lọc phần tử theo điều kiện:
+- Ví dụ: 
+    let numbers = [5, 10, 15, 20]
+    let over10 = numbers.filter(function(num) {
+        return num > 10
+    })
+    console.log(over10)  // [15, 20]
+- filter() cũng trả về mảng mới, có thể rỗng
+
+# find() - Tìm phần tử đầu tiên phù hợp
+- Ví dụ:
+    let students = ["An", "Bình", "Hòa"]
+    let found = students.find(name => name.startsWith("B"))
+    console.log(found)  // "Bình"
+- Chỉ trả về 1 phần tử đầu tiên thỏa mãn, hoặc undefined nếu không tìm thấy
+
+# some() - Có phần tử nào đúng?
+- Ví dụ:
+    let ages = [15, 18, 20]
+    let hasTeen = ages.some(age => age < 18)
+    console.log(hasTeen) // true
+- Trả về true nếu ít nhất một phần tử đúng
+
+# every() - Tất cả phần tử có đúng không?
+- Ví dụ:
+    let valid = [20, 22, 24].every(age => age >= 18)
+    console.log(valid)  // true
+- Trả về false nếu ít nhất một phần tử sai, nếu tất cả đều đúng thì trả về true
+
+# reduce() - Tính tổng, tích, kết quả cuối cùng
+- Ví dụ:
+    let numbers = [1, 2, 3, 4]
+    let total = numbers.reduce(function(acc, curr) {
+        return acc + curr
+    }, 0)
+
+    console.log(total)  // 10
+- Giải thích: 
+| Tham số | Ý nghĩa                      |
+| ------- | ---------------------------- |
+| `acc`   | Biến tích lũy (giá trị cuối) |
+| `curr`  | Phần tử hiện tại             |
+| `0`     | Giá trị khởi tạo             |
+
+# Lỗi thường gặp và mẹo:
+| Lỗi                                | Giải thích               | Cách khắc phục                            |
+| ---------------------------------- | ------------------------ | ----------------------------------------- |
+| Không trả về giá trị trong `map()` | Không có `return`        | Luôn `return` trong hàm                   |
+| Dùng `forEach()` để tạo mảng mới   | Không trả mảng           | Dùng `map()` thay vì `forEach()`          |
+| Quên ép kiểu trong `filter()`      | So sánh sai kiểu dữ liệu | Dùng `Number()` hoặc `parseInt()` nếu cần |

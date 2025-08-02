@@ -1,0 +1,18 @@
+# Switch/case:
+let day = prompt("Nhập thứ (mon, tue, wed,...)")
+
+switch (day) {
+    case "mon":
+        console.log("Thứ Hai")
+        break
+    case "tue":
+        console.log("Thứ Ba");
+        break;
+    case "wed":
+        console.log("Thứ Tư");
+        break;
+    default:
+        console.log("Không hợp lệ");
+}
+
+- Dùng switch khi có nhiều nhánh rẽ cụ thể (lựa chọn menu, ngày trong tuần,...)

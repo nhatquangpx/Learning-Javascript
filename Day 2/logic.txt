@@ -1,0 +1,7 @@
+# Toán tử logic:
+        | Toán tử | Tên            | Ví dụ                     | Kết quả                |   
+        | ------- | -------------- | ------------------------- | ---------------------- | 
+        | `&&`    | AND (và)       | `age > 18 && score >= 70` | `true` nếu cả hai đúng |     
+        | `||`    | OR (hoặc)      | `age < 18 || age > 60     | `true` nếu 1 trong hai đúng 
+        | `!`     | NOT (phủ định) | `!true` → `false`         | Đảo ngược giá trị      |      
+

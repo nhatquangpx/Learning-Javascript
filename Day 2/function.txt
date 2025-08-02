@@ -1,0 +1,34 @@
+# Hàm là gì?
+- Là khối mã có thể được gọi lại nhiều lần để tái sử dụng logic
+
+# Cách khai báo hàm:
+- Cú pháp: 
+    function sayHello() {
+        console.log("Xin chào Quang nho")
+    }
+
+- Để gọi hàm, ta dùng cú pháp:  sayHello()
+
+# Hàm có tham số:
+- Cú pháp:
+    function greet(name) {
+        console.log("Hello bạn nhe, " + name + "!")
+    }
+
+    greet("Quang")
+
+# Hàm có giá trị trả về:
+- Cú pháp:
+    function sum(a, b) {
+        return a+b 
+    }
+    let kq = sum(1, 2)
+    console.log("Tong la: ", kq)
+
+# Hàm ẩn danh & arrow function:
+- Cú pháp:
+    const chao = function(name) {
+        return "Hi, " + name
+    }
+
+    const chao2 = (name) => "Hi, " + name

@@ -1,0 +1,21 @@
+# Hệ thống quản lý sinh viên
+Mô tả bài toán
+- Bạn cần viết một chương trình quản lý danh sách học sinh gồm tên và điểm số.
+- Chương trình gồm các chức năng sau:
+- Yêu cầu người dùng nhập số học sinh (n)
+- Dùng vòng lặp for để nhập thông tin từng học sinh (tên và điểm, qua prompt)
+- Lưu dữ liệu vào mảng các object: { name: "Quang", score: 85 }
+- Sau khi nhập xong, thực hiện:
+🔹 1. Hiển thị danh sách học sinh bằng forEach()
+        "1. Quang – 85 điểm"
+🔹 2. Tính điểm trung bình toàn lớp (reduce())
+🔹 3. Lọc ra các học sinh trên 70 điểm (filter())
+🔹 4. Tìm học sinh điểm cao nhất (reduce() hoặc sort())
+🔹 5. Tạo mảng mới chỉ chứa tên học sinh (map())
+🔹 6. Viết hàm ranking(score) phân loại học lực:
+        Điểm	Học lực
+        ≥ 90	Giỏi
+        70–89	Khá
+        50–69	Trung bình
+        < 50	Yếu
+📌 Dùng hàm này để hiển thị học lực của từng học sinh.
