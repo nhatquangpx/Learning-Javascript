@@ -1,0 +1,27 @@
+# Câu lệnh if, else, else if
+- Cú pháp:
+    If (điều kiện) {
+        // code chạy khi đúng
+    } else {
+        // code chạy khi sai
+    }
+
+- Ví dụ: Kiểm tra tuổi
+    let age = 18;
+    if (age >= 18) {
+        console.log("Bạn đã đủ tuổi lái xe");
+    } else {
+        console.log("Bạn chưa đủ tuổi lái xe");
+    }
+
+- else if: Dùng để kiểm tra nhiều trường hợp
+    let score = 85;
+    if (score >= 90) {
+        console.log("Xuất sắc");
+    } else if (score >= 70) {
+        console.log("Khá");
+    } else if (score >= 50) {
+        console.log("Trung bình");
+    } else {
+        console.log("Yếu");
+    }
