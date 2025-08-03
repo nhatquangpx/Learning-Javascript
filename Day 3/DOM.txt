@@ -1,0 +1,20 @@
+# DOM là gì?
+- Document Object Model là cách trình duyệt hiểu và biểu diễn trang HTML dưới dạng cây mà JS có thể đọc và thao tác
+- Ví dụ: file .html:
+    <body>
+        <h1>Tiêu đề</h1>
+        <p>Nội dung</p>
+    </body>
+-> JS nhìn thấy như này:
+    document.body → <body>...</body>
+    document.body.children → [<h1>, <p>]
+
+# Tại sao DOM quan trọng:
+    | Hành động   | Dùng làm gì                          |
+    | ----------- | ------------------------------------ |
+    | Đọc         | Lấy nội dung từ thẻ HTML             |
+    | Sửa         | Đổi nội dung, màu sắc, ảnh, class... |
+    | Thêm        | Tạo mới phần tử HTML                 |
+    | Xóa         | Xoá phần tử khỏi trang               |
+    | Bắt sự kiện | Ví dụ: click, gõ phím, rê chuột      |
+

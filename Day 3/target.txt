@@ -1,0 +1,6 @@
+Mục tiêu của buổi học:
+- Hiểu khái niệm DOM: mô hình cây thể hiện HTML trong bộ nhớ của trình duyệt
+- Biết cách truy cập các phần tử HTML: truy cập bằng getElementById, querySelector, getElementByClassName
+- Thực hiện được các thao tác DOM cơ bản: đọc nội dung HTML (.innerText, .innerHTML), sửa đổi nội dung, thuộc tính (src, href, alt, .style), làm việc với class (classList.add, remove, toggle)
+- Biết cách xử lý sự kiện trong JS: gắn sự kiện bằng addEventListener, hiểu các loại sự kiện phổ biến (click, input, change, mouseover, keydown,...)
+- Tự xây dựng được tương tác đơn giản với người dùng

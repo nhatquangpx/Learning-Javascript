@@ -1,0 +1,32 @@
+# Sửa nội dung và thuộc tính DOM:
+- Đổi nội dung văn bản: .innerText
+    let p = document.getElementById("hello")
+    p.innerText = "Chào bạn"
+-> Thay đổi phần chữ người dùng nhìn thấy
+
+- Đổi HTML bên trong: .innerHTML
+    p.innerHTML = "<strong>Chữ đậm</strong>"
+-> Chú ý: Có thể chèn HTML động và gây báo lỗi bảo mật nếu không kiểm soát dữ liệu từ người dùng
+
+- Đổi thuộc tính phần tử (src, alt, value,...)
+    File .html:
+    <img id="avatar" src="old.jpg" alt="Ảnh cũ">
+    JS:
+    let img = document.getElementById("avatar")
+    img.src = "new.jpg"
+    img.alt = "Ảnh mới"
+
+- Đổi thuộc tính CSS: .style
+    p.style.color = "red"
+    p.style.fontSize = "20px"
+-> Chú ý: Không nên viết quá nhiều style trong JS - chỉ dùng để thay đổi theo hành vi
+
+- Thêm/xóa class:
+    p.classList.add("highlight")
+    p.classList.remove("hidden")
+    p.classList.toggle("active")        // Bật/tắt class ->     | Trường hợp                     | Kết quả |
+                                                                | ------------------------------ | ------- |
+                                                                | Nếu phần tử **có class** → xóa |         |
+                                                                | Nếu phần tử **chưa có** → thêm |         |
+                                        -> Rất tiện để làm các chức năng bật/tắt trạng thái như menu ẩn/hiện, nút "like", đổi màu
+
