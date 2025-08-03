@@ -1,0 +1,28 @@
+# Truy cập phần tử DOM:
+- Cách truy cập:
+        | Cách truy cập    | Cú pháp                                    | Kết quả        |
+        | ---------------- | ------------------------------------------ | -------------- |
+        | **id**           | `document.getElementById("id")`            | 1 phần tử      |
+        | **class**        | `document.getElementsByClassName("class")` | HTMLCollection |
+        | **tag name**     | `document.getElementsByTagName("p")`       | HTMLCollection |
+        | **CSS selector** | `document.querySelector("selector")`       | 1 phần tử      |
+        | **All matches**  | `document.querySelectorAll("selector")`    | NodeList       |
+
+- Ví dụ:
+    File .html:
+    <p id="hello">Xin chào</p>
+    <p class="intro">Tôi là Quang</p>
+
+    JS:
+    let p1 = document.getElementById("hello")
+    let p2 = document.querySelector(".intro")
+
+    console.log(p1.innerText); // Xin chào
+    console.log(p2.innerText); // Tôi là Quang  
+
+- Lưu ý khi chọn:
+    | Cần chọn                         | Dùng gì?                                     |
+    | -------------------------------- | -------------------------------------------- |
+    | Phần tử duy nhất (id)            | `getElementById` hoặc `querySelector`        |
+    | Nhiều phần tử giống nhau (class) | `querySelectorAll`, `getElementsByClassName` |
+
