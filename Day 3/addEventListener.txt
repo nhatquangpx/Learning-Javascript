@@ -1,0 +1,81 @@
+# Bắt sự kiện
+- Cách dùng cơ bản:
+    File .html:
+    <button id="bam">Submit</button>
+    JS:
+    let bton = document.getElementById("click")
+    bton.addEventListener("click", function () {
+        alert("Bạn đã bấm nút!")
+    })
+
+- Các sự kiện phổ biến:
+        | Sự kiện phổ biến | Mô tả                     |
+        | ---------------- | ------------------------- |
+        | `click`          | Bấm chuột                 |
+        | `input`          | Gõ vào ô nhập             |
+        | `change`         | Thay đổi select, checkbox |
+        | `keydown`        | Nhấn phím                 |
+        | `mouseover`      | Rê chuột vào              |
+
+- Truy cập nội dung trong sự kiện:
+    File .html:
+    <input id="ten" placeholder="Nhập tên">
+    <button id="hien">Hiện tên</button>
+    <p id="kq"></p>
+    JS:
+    let input = document.getElementById("ten")
+    let btn = document.getElementById("hien")
+    let p = document.getElementById("kq")
+    btn.addEventListener("click", function() {
+        p.innerText = "Xin chào, " + input.value
+    })
+
+- e.target là gì? 
+    + Là phần tử HTML đã kích hoạt sự kiện
+    + Khi gắn một addEventListener, có thể truy cập đối tượng tượng sự kiện (e hoặc event). Trong đó:
+    
+        | Thuộc tính           | Ý nghĩa                                                     |
+        | -------------------- | ----------------------------------------------------------- |
+        | `e.target`           | Phần tử HTML mà người dùng tương tác (click, gõ phím, v.v.) |
+        | `e.type`             | Loại sự kiện (click, input...)                              |
+        | `e.preventDefault()` | Ngăn hành vi mặc định (ví dụ: ngăn form gửi đi)             |
+
+    + Ví dụ: 
+    File .html:
+    <ul id="menu">
+    <li>Trang chủ</li>
+    <li>Sản phẩm</li>
+    <li>Liên hệ</li>
+    </ul>
+    JS:
+    let menu = document.getElementById("menu")
+    menu.addEventListener("click", function (e) {
+        console.log("Bạn bấm vào: ", e.target.innerText)
+    })
+    -> Nếu bạn click vào <li>Sản phẩm</li> → e.target chính là thẻ <li> đó
+    -> e.target.innerText sẽ in ra "Sản phẩm"
+
+- Tại sao e.target quan trọng?
+    + Cho phép dùng 1 sự kiện cho nhiều phần tử con ("event delegation")
+    + Tránh việc phải gắn addEventListener nhiều lần cho từng nút, từng thẻ con
+
+- Phân biệt e.target với this:
+        | Cái gì?    | Là gì?                              | Trong `addEventListener` |
+        | ---------- | ----------------------------------- | ------------------------ |
+        | `e.target` | Phần tử **người dùng tác động vào** | Linh động, có thể là con |
+        | `this`     | Phần tử **được gắn sự kiện**        | Thường là cha            |
+
+- Ví dụ nâng cao về e.target:
+    File .html: 
+    <ul id="list">
+        <li class="item">🍎 Táo</li>
+        <li class="item">🍌 Chuối</li>
+    </ul>
+    JS:
+    let list = document.getElementById("list") 
+    list.addEventListener("click", function (e) {
+        if (e.target.classList.contains("item")) {
+            alert("Bạn chọn: " + e.target.innerText)
+        }
+    })
+        
