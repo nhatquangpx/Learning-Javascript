@@ -1,0 +1,62 @@
+# Arrow function là gì?
+- Cách viết hàm ngắn gọn hơn, được giới thiệu từ ES6
+- Giúp code gọn hơn, rõ ràng hơn, thường dùng trong các hàm callback (map, filter...)
+- Không có this riêng (khác với function thường)
+
+# So sánh cú pháp:
+    // Hàm thường:
+    function sayHi(name) {
+        return `Hi, ${name}`
+    }
+
+    // Arrow function:
+    const sayHi = (name) => {
+        return `Hi, ${name}`
+    }
+=> Arrow function ngắn gọn hơn và thường viết dưới dạng biến (const)
+
+# Các cách viết arrow function:
+- Nếu chỉ có 1 tham số -> Bỏ ngoặc ()
+    const square = x => x*x;
+    // Tương đương với:
+    function square(x) {
+        return x * x;
+    }
+
+- Nếu có nhiều tham số -> phải có ngoặc ()
+    const add = (a, b) => a+b;
+
+- Nếu không có tham số -> Dùng ngoặc () rỗng
+    const sayHello = () => console.log("Hello nho!")
+
+- Nếu có nhiều dòng lệnh -> Phải dùng {} và return
+    const greet = (name) => {
+        let message = `Xin chào ${name}`
+        return console.log(message)
+    }
+
+- Trả về object -> Phải bọc bằng () để không bị nhầm là block
+    SAI:
+    const getUser = () => ({ name: "Quang" });
+    ĐÚNG:
+    const getUser = () => ({ name: "Quang" });
+
+# Ứng dụng thực tế: Dùng trong map, filter, forEach,...
+    let arr = [1, 2, 3]
+
+    let doubled = arr.map(x => x * 2)   // [2, 4, 6]
+    let even = arr.filter(x => x % 2 == 0) // [2]
+
+# Lưu ý về this:
+- Arrow function không có this riêng. Nó sẽ kế thừa this từ bên ngoài
+- Ví dụ:
+    const obj = {
+        name: "Quang",
+        sayHi: function () {
+            setTiemout(() => {
+                console.log("Hi, tôi là " + this.name)
+            }, 1000);
+        }
+    };
+-> this.name hoạt động chính xác nhờ dùng arrow function trong setTiemout
+Nếu dùng function() thì this sẽ bị đổi (không trỏ về obj nữa)
