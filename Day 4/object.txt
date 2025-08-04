@@ -1,0 +1,32 @@
+# Object là gì?
+- Là kiểu dữ liệu phức hợp để lưu thông tin có liên quan
+- 1 object gồm nhiều cặp key: value 
+- Ví dụ:
+    let user = {
+        name: "Quang",
+        age: 23,
+        isAdmin: true
+    }
+
+# Truy cập thuộc tính
+- Có 2 cách
+- Ví dụ:
+    console.log(user.name)
+    console.log(user[age])
+-> Dùng dấu . khi biết rõ tên key, dùng["abc"] khi cần truy cập động (biến)
+
+# Thêm/Sửa/Xóa thuộc tính
+    user.email = "quang@gmail.com";    // Thêm
+    user.age = 24;                     // Sửa
+    delete user.isAdmin;              // Xoá
+
+# Object lồng object
+    let user = {
+        name: "Quang",
+        address: {
+            cty: "Hà Nội",
+            district: "Phú Xuyên"
+        }
+    }
+    console.log(user.address.city)
+

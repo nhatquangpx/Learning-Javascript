@@ -1,0 +1,21 @@
+# Lý do dùng template string: 
+- Dùng để nối chuỗi + chèn biến:
+- Ví dụ:
+    let name = "Quang";
+    let age = 23;
+    let msg = `Xin chào ${name}, bạn ${age} tuổi!`;
+    console.log(msg);
+-> So với "Xin chào " + name + ", bạn " + age + " tuổi!", template string dễ viết, dễ đọc hơn nhiều.
+
+# Template string hỗ trợ:
+- Xuống dòng trực tiếp:
+    let msg = `
+    Chào bạn ${name}!
+    Chúc một ngày tốt lành.
+    `;
+
+- Chèn biểu thức:
+    let total = 5;
+    let price = 20000;
+    console.log(`Tổng tiền: ${total * price} VNĐ`);
+

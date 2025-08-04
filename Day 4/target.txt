@@ -1,0 +1,5 @@
+Mục tiêu của buổi học:
+- Hiểu và sử dụng được Object trong JS
+- Biết cách trích xuấy giá trị từ object/array bằng destructuring
+- Biết cách chèn biến vào chuỗi với template string
+- Viết hàm ngắn gọn với arrow function
