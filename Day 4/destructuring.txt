@@ -1,0 +1,32 @@
+# Destructuring là gì?
+- Cú pháp giúp trích xuất dữ liệu từ object hoặc array và gán chúng vào các biến một cách ngắn gọn, rõ ràng, tiện lợi
+
+# Destructuring object:
+    let user = { name: "Quang", age: 23 };
+
+    // Thay vì:
+    let name = user.name;
+    let age = user.age;
+
+    // Dùng destructuring:
+    let { name, age } = user;
+
+    console.log(name); // Quang
+    console.log(age);  // 23
+
+# Đổi tên biến khi destructuring:
+    let { name: hoTen } = user
+    console.log(hoTen)  // Quang
+
+# Destructuring array:
+    let scores = [8, 9, 10]
+    let [a, b, c] = scores
+    console.log(b)   // 9
+
+# Destructuring trong function:
+    function printUser({ name, age }) {
+        console.log('Tên ${name}, Tuổi: $(age)')
+    }
+    printUser({ name:"Quang", age: 21 })
+
+    
