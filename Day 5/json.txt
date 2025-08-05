@@ -1,0 +1,16 @@
+# JSON = Javascript Object Notation
+- Là định dạng dữ liệu phổ biến nhất để giao tiếp giữa frontend và server (RestAPI)
+- JSON rất giống object nhưng:
+    + Chỉ có chuỗi (Phải dùng " chứ không phải ')
+    + Không có Hàm
+
+# Làm việc với JSON trong JSON
+- Convert JSON thành object JS:
+    let jsonStr = '{"name":"Quang","age":23}';
+    let obj = JSON.parse(jsonStr);
+    console.log(obj.name); // Quang
+
+- Convert JS thành JSON:
+    let user = {name: "Quang", age: 21}
+    let json = JSON.stringify(user)
+    console.log(json)  // {"name":"Quang","age":23}
