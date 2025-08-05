@@ -1,0 +1,78 @@
+# Bất đồng bộ trong JS là gì?
+- JS là ngôn ngữ chạy 1 luồng, nên chỉ khi có các tác vụ mất thời gian (chờ người dùng, chờ server, đọc file), nó cần xử lý bất đồng bộ để không làm đứng giao diện
+- Ví dụ: setTimeout, addEventListener, fetch,... là bất đồng bộ
+
+# Callback giải quyết bất đồng bộ
+- Ví dụ: 
+    function getData(callback) {
+    setTimeout(() => {
+        let data = "Dữ liệu từ server";
+        callback(data); // gọi lại khi xong
+    }, 2000);
+    }
+
+    getData(function (result) {
+    console.log("Đã nhận:", result);
+    });
+➡️ Chương trình không bị chặn.
+➡️ Sau 2s, callback sẽ được "gọi lại" tự động và in ra dữ liệu.
+- Cách hoạt động: Khi gọi setTimeout(callback, 2000):
+    + Hàm setTimeout chạy và đăng ký callback vào hệ thống "đợi" (Web API + callback queue)
+    + JS tiếp tục chạy các lệnh khác → không chặn
+    + Sau 2s, callback được đưa vào hàng đợi (event loop)
+    + Khi call stack rảnh, callback được thực thi
+
+# Callback Hell:
+- Cần xử lí nhiều tác vụ bất đồng bộ nối tiếp nhau, sẽ cần lồng nhiều callback vào nhau, rất rối mắt, tạo thành Hell
+- Ví dụ:
+    getUser(function (user) {
+        getPosts(user.id, function (posts) {
+            getComments(posts[0].id, function (comments) {
+            console.log(comments);
+            });
+        });
+    });
+-> Vấn đề:
+    + Lồng nhiều cấp
+    + Mất kiểm soát
+    + Khó debug
+    + Khó tái sử dụng
+    + Rất dễ tạo lỗi khi xử lý lỗi (try/catch không hoạt động với callback bất đồng bộ)
+- Ví dụ cụ thể: Mô phỏng 3 bước
+    setTimeout(() => {
+        console.log("Bước 1");
+
+        setTimeout(() => {
+            console.log("Bước 2");
+
+            setTimeout(() => {
+            console.log("Bước 3");
+            }, 1000);
+
+        }, 1000);
+
+    }, 1000);
+➡️ Kết quả:
+Chờ 1 giây → log "Bước 1"
+Chờ thêm 1 giây → log "Bước 2"
+Chờ thêm 1 giây → log "Bước 3"
+
+=> Giải pháp cho vấn đề trên là sử dụng PROMISE!!!
+
+# Promise là gì?
+- Là một object đại diện cho 1 hành động sẽ xảy ra trong tương lai
+- Có 3 trạng thái:
+    + pending - chưa hoàn thành
+    + fulfilled - thành công
+    + rejected - thất bại
+
+# Ví dụ tạo Promise:
+    let promise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Dữ liệu đã sẵn sàng")
+        }, 1000)
+    })
+
+    promise.then((data) => {
+        console.log(data)
+    })
