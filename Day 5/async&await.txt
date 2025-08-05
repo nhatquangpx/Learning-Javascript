@@ -1,0 +1,17 @@
+# async biến một hàm thành bất đồng bộ
+# await chờ kết quả từ Promise trước khi chạy tiếp
+# Ví dụ:
+    function fetchData() {
+        return new Promise((resolve) => {
+            setTimeout(() => resolve("Hello from server"), 1000)
+        })
+    }
+
+    async function getData() {
+        let data = await fetchData()
+        console.log(data)   // Hello from server
+    }
+
+    getData()
+
+=> Dễ viết hơn .then(), gọn gàng, dễ đọc
