@@ -1,0 +1,5 @@
+Mục tiêu của buổi học:
+- Thao tác được với dữ liệu JSON
+- Hiểu được Promise là gì và dùng trong xử lý bất đồng bộ
+- Viết code bất đồng bộ hiện đại với async/await
+- Gửi và nhận dữ liệu từ Internet bằng Fetch API
